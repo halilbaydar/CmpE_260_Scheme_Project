@@ -7,9 +7,9 @@
 ; Solver function
 (define tent_list '((7 3) (6 1) (3 3) (5 8) (5 6) (2 4) (3 7) (2 2) (3 8) (0 4) (1 7) (1 4)))
 
-(define all_possible_list'())
+(define all_possible_list'())  
 
-;(define (TENTS-SOLUTION liste) (define row_list (car liste)) (define col_list(cadr liste)) (define tree_listesi(caddr liste)) (define table_size(list (length row_list) (length col_list))))
+;(define (TENTS-SOLUTION liste)  (define row_list (car liste)) (define col_list(cadr liste)) (define tree_listesi(caddr liste)) (define table_size(list (length row_list) (length col_list))))
 
 ;(define (ilerle tree_list row_list col_list table_size tent_list tree_list_2) (cond
 ;                                                                              (null? (eliminate_neighbor_with_tree_and_tent (car tree_list) tree_list_2 tent_list table_size) '())

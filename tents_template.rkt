@@ -11,7 +11,7 @@
 
 (define (solve tree_list all_possible_list table_size)   (cond
                                                          ;((display all_possible_list))
-                                                         ((null? all_possible_list) #f)
+                                                         ((null? all_possible_list) (display #f))
                                                          ((null? (car all_possible_list)) (solve tree_list (cdr all_possible_list) table_size))
                                                          ((if(and(eq? (it_it_all_zero(caar all_possible_list)) #t) (eq? (it_it_all_zero(cadar all_possible_list)) #t)) (display (caddar all_possible_list))
               (solve tree_list(append (delete_empt(cdr all_possible_list)) (add_list(eliminate_neighbor_with_tree_and_tent(caar (cdddr (car all_possible_list))) tree_list (caddar all_possible_list) table_size) 
@@ -21,7 +21,7 @@
 (define (add_list indexler row_list col_list tent_list tree_list) (cond
                                                         ((null? indexler )'() ) 
                                                         ((if (and (eq? (is_it_available_swap row_list (caar indexler)) #t) (eq? (is_it_available_swap col_list (cadar indexler)) #t)) 
-                                                        (cons (append (list (SWAP-NTH row_list (caar indexler)) (SWAP-NTH col_list (cadar indexler))) (list (list (car indexler) tent_list) (cdr tree_list)))
+                                                        (cons (append (list (SWAP-NTH row_list (caar indexler)) (SWAP-NTH col_list (cadar indexler))) (list (cons (car indexler)  tent_list) (cdr tree_list)))
                                                         (add_list (cdr indexler)  row_list col_list tent_list tree_list)) (add_list (cdr indexler)  row_list col_list tent_list tree_list))
                                                         )))
 
